@@ -1,7 +1,7 @@
 body{
 	vertical-align:middle;
 	font:80% "Microsoft JhengHei",sans-serif;
-	margin: 60px;
+	margin: 20px;
 	font-size:15px;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c3dbb8+11,7def73+64,e4f2e3+100 */
 	background: #c3dbb8; /* Old browsers */
@@ -11,11 +11,16 @@ body{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c3dbb8', endColorstr='#e4f2e3',GradientType=1 ); /* IE6-9 */
 	
 }
-#header{
+
+hr{
+	
+	border:1px solid black;height:1px;
 }
+
 #mainIcon{
 	
-	position:absolute;right:100px;top:25px;width:auto;width:200px;
+	position:absolute;right:100px;top:25px;
+	width:auto;width:220px;
 }
 .demoHeaders {
 	margin-top: 2em;
