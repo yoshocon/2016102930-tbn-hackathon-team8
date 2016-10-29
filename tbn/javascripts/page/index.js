@@ -6,7 +6,7 @@ var master = (function(){
 		this._main = null;
 		this._footer = null;
 		this._homepage = null;
-		
+		this._mainIcon = null;
 		//
 		this._construct();
 	}
@@ -16,6 +16,7 @@ var master = (function(){
 			this._main = $("#main");
 			this._footer = $("#footer");
 			this._homepage = $("#homepage");
+			this._mainIcon = $("#mainIcon");
 			
 			this._start();
 		},
