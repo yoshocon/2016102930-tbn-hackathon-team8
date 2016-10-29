@@ -1,6 +1,6 @@
 var master = (function(){
 	var _const;
-	
+
 	_const = function(){
 		this._header = null;
 		this._main = null;
@@ -17,7 +17,7 @@ var master = (function(){
 			this._footer = $("#footer");
 			this._homepage = $("#homepage");
 			this._mainIcon = $("#mainIcon");
-			
+
 			this._start();
 		},
 		_start:function(){
@@ -25,10 +25,10 @@ var master = (function(){
 		//	objThis._accordin.accordion();
 		//	objThis._tabs.tabs();
 			this._initialAll();
-			
+
 			//回首頁
 			this._homepage.on("click",$.proxy(function(event){
-				$.get('pages/main.html',function(data){
+				$.get('pages/main.php',function(data){
 					objThis._main.html(data);
 				});
 			},this))
@@ -37,13 +37,13 @@ var master = (function(){
 			this._test.on("click",$.proxy(function(event){
 				objThis._getAlert("測試測試")
 			},this))
-			
+
 			this._test1.on("click",$.proxy(function(event){
 				objThis._getConfirm("測試測試1")
 			},this))*/
 		},
 		_initialAll:function(){
-			
+
 		},
 		//bootbox alert
 		_getAlert:function(text){
@@ -56,10 +56,10 @@ var master = (function(){
 				alert(result)
 			});
 		},
-		
+
 	}
-	
-	
+
+
 	return _const;
 }());
 var mySample

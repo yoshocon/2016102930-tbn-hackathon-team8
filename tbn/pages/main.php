@@ -18,12 +18,12 @@
 			<tr>
 				<td>
 					<select id="selectArea" class="form-control">
-						<option value="請選擇">請選擇</option>
+
 					</select>
 				</td>
 				<td>
 					<select id="selectSpecies" class="form-control">
-						<option value="請選擇">請選擇</option>
+
 					</select>
 				</td>
 				<td>
@@ -46,8 +46,6 @@
 				<td colspan="7">
 					<p>主頁面</p>
 					<div class="fakewindowcontain">
-
-						<p>內容</p>
 
 						<!-- ui-dialog -->
 						<div class="ui-overlay">
