@@ -22,25 +22,17 @@ var master = (function(){
 		},
 		_start:function(){
 			var objThis = this;
-		//	objThis._accordin.accordion();
-		//	objThis._tabs.tabs();
 			this._initialAll();
 			
+			$.get('pages/main.php',function(data){
+					objThis._main.html(data);
+				});
 			//回首頁
 			this._homepage.on("click",$.proxy(function(event){
-				$.get('pages/main.html',function(data){
+				$.get('pages/main.php',function(data){
 					objThis._main.html(data);
 				});
 			},this))
-			/*
-			//測試按鈕
-			this._test.on("click",$.proxy(function(event){
-				objThis._getAlert("測試測試")
-			},this))
-			
-			this._test1.on("click",$.proxy(function(event){
-				objThis._getConfirm("測試測試1")
-			},this))*/
 		},
 		_initialAll:function(){
 			

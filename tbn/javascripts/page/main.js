@@ -3,32 +3,18 @@ var main = (function(){
 	
 	_const = function(){
 		this._tabs = null;
-		this._reset = null;
-		this._select = null;
-		
-		this._selectArea = null;
-		this._selectSpecies = null;
-		this._selectName = null;
+		this._test = null;
+		this._test1 = null;
 		this._selectNum = null;
-		this._iframe = null;
-		this._mainContent = null;
 		
 		this._construct();
-		
-		
 	}
 	_const.prototype = {
 		_construct:function(){
 			this._tabs = $("#tabs");
-			this._reset = $("#reset");
-			this._select = $("#select");
-			
-			this._selectArea = $("#selectArea");
-			this._selectSpecies = $("#selectSpecies");
-			this._selectName = $("#selectName");
+			this._test = $("#test");
+			this._test1 = $("#test1");
 			this._selectNum = $("#selectNum");
-			this._iframe = $(".iframe");
-			this._mainContent = $("#mainContent");
 			
 			this._start();
 		},
@@ -38,64 +24,14 @@ var main = (function(){
 			objThis._getNum();
 			this._initialAll();
 			
-			//重新輸入按鈕
-			this._reset.on("click",$.proxy(function(event){
-				document.getElementById("selectArea").value = "請選擇";
-				document.getElementById("selectSpecies").value = "請選擇";
-				document.getElementById("selectName").value = "";
-				document.getElementById("selectNum").value = "請選擇";
-				objThis._selectArea.attr("class","form-control");
-				objThis._selectSpecies.attr("class","form-control");
-				objThis._selectName.attr("class","form-control");
-				objThis._selectNum.attr("class","form-control");
-			},this));
-			//查詢按鈕
-			this._select.on("click",$.proxy(function(event){
-				if(objThis._selectArea.val() == "請選擇")
-				{
-					objThis._selectArea.addClass("error-control");
-				}else
-				{
-					objThis._selectArea.attr("class","form-control");
-				}
-				
-				if(objThis._selectSpecies.val() == "請選擇")
-				{
-					objThis._selectSpecies.addClass("error-control");
-				}else
-				{
-					objThis._selectSpecies.attr("class","form-control");
-				}
-				
-				if(objThis._selectName.val() == "")
-				{
-					objThis._selectName.addClass("error-control");
-				}else
-				{
-					objThis._selectName.attr("class","form-control");
-				}
-				
-				if(objThis._selectNum.val() == "請選擇")
-				{
-					objThis._selectNum.addClass("error-control");
-				}else
-				{
-					objThis._selectNum.attr("class","form-control");
-				}
-				
-				if(objThis._selectArea.val() == "請選擇" || objThis._selectSpecies.val() == "請選擇" || objThis._selectName.val() == "" ||  objThis._selectNum.val() == "請選擇")
-				{
-					objThis._getAlert("請選取查詢資料");
-				}else
-				{
-					$.get("detail.php?kind=" + objThis._selectSpecies.val() + "&Cname=" + objThis._selectName,function(data){
-						objThis._mainContent.html(data);
-					});		
-				}			
-				
-			},this));
+			//測試按鈕
+			this._test.on("click",$.proxy(function(event){
+				objThis._getAlert("測試測試")
+			},this))
 			
-			objThis._iframe.colorbox({iframe:true, width:"80%", height:"80%"});
+			this._test1.on("click",$.proxy(function(event){
+				objThis._getConfirm("測試測試1")
+			},this))
 			
 			
 		},
@@ -108,6 +44,7 @@ var main = (function(){
 		},
 		//bootbox confirm
 		_getConfirm:function(text){
+			//bootbox.confirm(text)
 			bootbox.confirm(text, function(result) {
 				alert(result)
 			});
