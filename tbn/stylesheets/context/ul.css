@@ -5,7 +5,7 @@ ul { /* 取消ul預設的內縮及樣式 */
 }
 
 ul.drop-down-menu {
-	border: #ccc 1px solid;
+	border: #ccc 0 solid;
 	display: inline-block;
 	font-family: 'Open Sans', Arial, sans-serif;
 	font-size: 13px;
@@ -26,7 +26,7 @@ ul.drop-down-menu > li {
 }
 
 ul.drop-down-menu a {
-	background-color: #fff;
+	background-color: #A8A8A8;
 	color: #333;
 	display: block;
 	padding: 0 30px;
