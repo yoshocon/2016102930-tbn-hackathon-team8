@@ -16,6 +16,19 @@ hr{
 	
 	border:1px solid black;height:1px;
 }
+#footer{
+	background-color:#20B2AA;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	height:100px;
+}
+#homepage{
+	width:68%;
+	
+}
+#ul{
+	width:68%;
+}
 
 #mainIcon{
 	
