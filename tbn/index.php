@@ -19,7 +19,7 @@
 			
 			<img id="homepage" class="img-thumbnail" src="img/title.png" />
 			
-			<ul class="drop-down-menu" >
+			<ul id="ul" class="drop-down-menu" >
 				<li><a href="#"><img style='margin-right:10px;' src='img/cat.png'>關於我們</a>
 					<ul>
 						<li><a href="#"><img style='margin-right:10px;' src='img/bear.png'>服務據點</a>
