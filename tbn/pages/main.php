@@ -16,11 +16,12 @@
 				<th>查詢名字(關鍵字ex:蝶)</th>
 				<th>查詢英文名字(關鍵字ex:dog)</th>
 				<th>數量最大限制</th>
+
 			</tr>
 			<tr>
 				<td>
 					<select id="selectArea" class="form-control">
-
+						<option value="請選擇">請選擇</option>
 					</select>
 				</td>
 				<td>
@@ -67,9 +68,19 @@
 				</td>
 			</tr>
 		</table>
+
+
+
+
+
+
 	</div>
 	<div id="tabs-2">Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</div>
 	<div id="tabs-3">Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</div>
 </div>
+
+
+
+
 <link rel="stylesheet" href="stylesheets/page/main.css">
 <script src="javascripts/page/main.js"></script>	<!-- js -->
