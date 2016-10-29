@@ -1,6 +1,10 @@
 <?php
- include("kind.php");
- include("detail.php");
+  include("kind.php");
+  include("detail.php");
+  if (isset($_GET['id']))
+  {
+    $rid = $_GET['id'];
+  }
 ?>
 <div id="tabs">
 	<ul>
@@ -27,10 +31,10 @@
 				<td>
 					<select id="selectSpecies" class="form-control">
 						<?php
-							foreach ($content as $key => $value)
-							{
-								echo "<option value='$value->SpeciesName_CN'>$value->SpeciesName_CN($value->SpeciesName_Eng)</option>";
-							}
+              foreach ($content as $key => $value)
+              {
+                echo "<option value='$value->SpeciesName_CN'>$value->SpeciesName_CN($value->SpeciesName_Eng)</option>";
+              }
 						?>
 					</select>
 				</td>
@@ -54,16 +58,13 @@
 			<tr>
 				<td colspan="7">
 					<div id="mainContent">
-						<?php
-							$i = 0;
-							while (isset($detail['rows'][$i]['pics'][0]['pid']))
-							{
-								$pid = $detail['rows'][$i]['pics'][0]['pid'];
-								$image = "http://api.tbn.org.tw/api/picture?pid=$pid&q=25&size=200&type=json";
-								echo "<img src=$image width='200px' height='200px'>";
-								$i++;
-							}
-						?>
+            <?php
+              if (isset($rid))
+              {
+                echo 'ee';
+                echo '<script>$.get("pages/animal.php?rid=$rid",function(data){$("#mainContent").html(data);});</srcipt>';
+              }
+            ?>
 					</div>
 				</td>
 			</tr>
