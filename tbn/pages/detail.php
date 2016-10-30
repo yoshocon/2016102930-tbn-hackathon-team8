@@ -35,9 +35,12 @@
       $wiki2 = $wiki[0];
       $wikiurl = "https://zh.wikipedia.org/wiki/" . $wiki2;
       $title2 = urlencode($title[0]);
+      $news2 = urlencode($wiki2[0]);
       $mapurl = "http://api.tbn.org.tw/api/wms?ez=$kind&name=$title2&lat=" . $animal['Lat'] . "&lon=" . $animal['Lon'] . "&zoom=12";
+      $newsurl = "http://udn.com/search/result/2/$wiki2";
       echo "<input type='hidden' id='mapurl' value=$mapurl />";
       echo "<input type='hidden' id='wikiurl' value=$wikiurl />";
+      echo "<input type='hidden' id='newsurl' value=$newsurl />";
       echo "<div style='float:left;border-style:solid;border-width:thin;width:220px' >";
         echo "<div style='text-align:center'>";
           echo "<font style='cursor:pointer;' onclick=search($rid);>".($i+1) . "." . $title[0] . "</font>";
@@ -77,6 +80,7 @@
   {
      $.get("pages/detail.php?id=" + id,function(data){
        $("#wiki").attr("src",document.getElementById("wikiurl").value);
+       $("#news").attr("src",document.getElementById("newsurl").value);
        $("#map").attr("src",document.getElementById("mapurl").value);
      	 $("#mainContent").html(data);
      });

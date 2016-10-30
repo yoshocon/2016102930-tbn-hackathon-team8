@@ -73,15 +73,29 @@
 
 
 	</div>
+
 	<div id="tabs-2">
       <div id="mapContent">
         <iframe id="map" width="655px" height="655px" frameborder="1" src=""></iframe>
       </div>
 	</div>
+
 	<div id="tabs-3">
       <div id="wikiContent">
           <iframe id="wiki" width="100%" height="750px" frameborder="1" src=""></iframe>
       </div>
+	</div>
+
+	<div id="tabs-4">
+			<div id="newsContent">
+					<iframe id="news" width="100%" height="750px" frameborder="1" src=""></iframe>
+			</div>
+	</div>
+	
+	<div id="tabs-5">
+			<div id="childContent">
+					<iframe id="child" width="100%" height="750px" frameborder="1" src=""></iframe>
+			</div>
 	</div>
 </div>
 

@@ -1,11 +1,11 @@
 var main = (function(){
 	var _const;
-	
+
 	_const = function(){
 		this._tabs = null;
 		this._reset = null;
 		this._select = null;
-		
+
 		this._selectSpecies = null;
 		this._selectName = null;
 		this._selectNum = null;
@@ -14,17 +14,17 @@ var main = (function(){
 		this._back = null;
 		this._tmpPara = null;
 		this._currentCondition = null;
-		
+
 		this._construct();
-		
-		
+
+
 	}
 	_const.prototype = {
 		_construct:function(){
 			this._tabs = $("#tabs");
 			this._reset = $("#reset");
 			this._select = $("#select");
-			
+
 			this._selectSpecies = $("#selectSpecies");
 			this._selectName = $("#selectName");
 			this._selectNum = $("#selectNum");
@@ -33,7 +33,7 @@ var main = (function(){
 			this._back = $("#back");
 			this._tmpPara = $("#tmpPara");
 			this._currentCondition = $("#currentCondition");
-			
+
 			this._start();
 		},
 		_start:function(){
@@ -41,7 +41,7 @@ var main = (function(){
 			objThis._tabs.tabs();
 			objThis._getNum();
 			this._initialAll();
-			
+			// objThis._child.attr("src","json2.php")
 			//重新輸入按鈕
 			this._reset.on("click",$.proxy(function(event){
 				document.getElementById("selectSpecies").value = "請選擇";
@@ -57,8 +57,8 @@ var main = (function(){
 			//查詢按鈕
 			this._select.on("click",$.proxy(function(event){
 				$(event.currentTarget).button("loading");
-				
-				
+
+
 				if(objThis._selectSpecies.val() == "請選擇")
 				{
 					objThis._selectSpecies.addClass("error-control");
@@ -66,7 +66,7 @@ var main = (function(){
 				{
 					objThis._selectSpecies.attr("class","form-control");
 				}
-				
+
 				if(objThis._selectName.val() == "")
 				{
 					objThis._selectName.addClass("error-control");
@@ -74,7 +74,7 @@ var main = (function(){
 				{
 					objThis._selectName.attr("class","form-control");
 				}
-				
+
 				if(objThis._selectNum.val() == "請選擇")
 				{
 					objThis._selectNum.addClass("error-control");
@@ -82,7 +82,7 @@ var main = (function(){
 				{
 					objThis._selectNum.attr("class","form-control");
 				}
-				
+
 				if(objThis._selectSpecies.val() == "請選擇" || objThis._selectName.val() == "" ||  objThis._selectNum.val() == "請選擇")
 				{
 					objThis._getAlert("請選取查詢資料");
@@ -90,35 +90,35 @@ var main = (function(){
 				}else
 				{
 					objThis._mainContent.empty();
-					objThis._mainContent.append("<div align='center'><div class='loading' align='center'></div></div><br/><font style='font-weight:bold;font-size:18px;'>查詢中...請稍等</font>");
+					objThis._mainContent.append("<div align='center'><div class='loading' align='center'></div><br/><font style='font-weight:bold;font-size:18px; '>查詢中...請稍等</font></div>");
 					$.get("pages/detail.php?kind=" + objThis._selectSpecies.val() + "&Cname=" + objThis._selectName.val() + "&cnt=" + objThis._selectNum.val(),function(data){
-						
+
 						$(event.currentTarget).button("reset");
 						document.getElementById("tmpPara").value = "kind=" + objThis._selectSpecies.val() + "&Cname=" + objThis._selectName.val() + "&cnt=" +objThis._selectNum.val();
 						objThis._back.removeAttr("disabled");
 						objThis._mainContent.html(data);
 						objThis._currentCondition.empty()
 						objThis._currentCondition.append("查詢->" + objThis._selectSpecies.val() + "->" + objThis._selectName.val() + ":");
-					});		
-				}			
-				
+					});
+				}
+
 			},this));
 			//維基
 			objThis._iframe.colorbox({iframe:true, width:"80%", height:"80%"});
 			//回上一頁
 			this._back.on("click",$.proxy(function(event){
-				
+
 				if(objThis._back.attr("disabled")!="disabled")
 				{
 					objThis._mainContent.empty();
 					objThis._mainContent.append("<div align='center'><div class='loading' align='center'></div></div><br/><font style='font-weight:bold;font-size:18px;'>查詢中...請稍等</font>");
 					$.get("pages/detail.php?" + document.getElementById("tmpPara").value,function(data){
 						objThis._mainContent.html(data);
-					});		
+					});
 				}
-				
+
 			},this))
-			
+
 		},
 		//取得GET參數
         _getPara:function(para)
@@ -126,7 +126,7 @@ var main = (function(){
             var strUrl = location.search;
             var getPara, ParaVal;
             var aryPara = [];
-			
+
             if (strUrl.indexOf("?") != -1) {
                 var getSearch = strUrl.split("?");
                 getPara = getSearch[1].split("&");
@@ -139,7 +139,7 @@ var main = (function(){
             return aryPara[para];
 		},
 		_initialAll:function(){
-			
+
 		},
 		//bootbox alert
 		_getAlert:function(text){
@@ -158,10 +158,10 @@ var main = (function(){
 				objThis._selectNum.append("<option value=" + i + ">" + i + "</option>");
 			}
 		}
-		
+
 	}
-	
-	
+
+
 	return _const;
 }());
 var mySample
