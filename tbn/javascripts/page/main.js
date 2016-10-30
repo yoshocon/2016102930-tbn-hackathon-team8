@@ -12,6 +12,8 @@ var main = (function(){
 		this._selectNum = null;
 		this._iframe = null;
 		this._mainContent = null;
+		this._back = null;
+		this._tmpPara = null;
 		
 		this._construct();
 		
@@ -29,6 +31,8 @@ var main = (function(){
 			this._selectNum = $("#selectNum");
 			this._iframe = $(".iframe");
 			this._mainContent = $("#mainContent");
+			this._back = $("#back");
+			this._tmpPara = $("#tmpPara");
 			
 			this._start();
 		},
@@ -88,15 +92,22 @@ var main = (function(){
 					objThis._getAlert("請選取查詢資料");
 				}else
 				{
-					$.get("detail.php?kind=" + objThis._selectSpecies.val() + "&Cname=" + objThis._selectName,function(data){
+					$.get("pages/detail.php?kind=" + objThis._selectSpecies.val() + "&Cname=" + objThis._selectName.val(),function(data){
+						document.getElementById("tmpPara").value = "kind=" + objThis._selectSpecies.val() + "&Cname=" + objThis._selectName.val() + "&cnt=" +objThis._selectNum.val();
+						
 						objThis._mainContent.html(data);
 					});		
 				}			
 				
 			},this));
-			
+			//維基
 			objThis._iframe.colorbox({iframe:true, width:"80%", height:"80%"});
-			
+			//回上一頁
+			this._back.on("click",$.proxy(function(event){
+				$.get("pages/detail.php?" + document.getElementById("tmpPara").value,function(data){
+					objThis._mainContent.html(data);
+				});
+			},this))
 			
 		},
 		_initialAll:function(){
