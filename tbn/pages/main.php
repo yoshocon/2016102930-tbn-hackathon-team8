@@ -15,7 +15,7 @@
 		<li id="back"><a href="">回上一頁</a></li>
 	</ul>
 	<div id="tabs-1">
-		<table  cellpadding="20">
+		<table  cellpadding="20" width="100%">
 			<tr>
 				<th>查詢地點</th>
 				<th>查詢種類</th>
@@ -72,10 +72,14 @@
 
 	</div>
 	<div id="tabs-2">
-      <div id="mapContent"></div>
+      <div id="mapContent">
+        <iframe id="map" width="655px" height="655px" frameborder="1" src=""></iframe>
+      </div>
 	</div>
 	<div id="tabs-3">
-		<p><a class='iframe' href="https://zh.wikipedia.org/wiki/台灣獼猴">Outside Webpage (Iframe)</a></p>
+      <div id="wikiContent">
+          <iframe id="wiki" width="100%" height="750px" frameborder="1" src=""></iframe>
+      </div>
 	</div>
 </div>
 

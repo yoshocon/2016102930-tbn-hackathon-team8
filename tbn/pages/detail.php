@@ -31,6 +31,13 @@
       $title = $animal['Title'];
       $title = explode(".",$title);
       $idurl = "'index.php?id=" . $rid."'";
+      $wiki = explode(";",$animal['SpCName']);
+      $wiki2 = $wiki[0];
+      $wikiurl = "https://zh.wikipedia.org/wiki/" . $wiki2;
+      $title2 = urlencode($title[0]);
+      $mapurl = "http://api.tbn.org.tw/api/wms?ez=$kind&name=$title2&lat=" . $animal['Lat'] . "&lon=" . $animal['Lon'] . "&zoom=12";
+      echo "<input type='hidden' id='mapurl' value=$mapurl />";
+      echo "<input type='hidden' id='wikiurl' value=$wikiurl />";
       echo "<div style='float:left;border-style:solid;border-width:thin;width:220px' >";
         echo "<div style='text-align:center'>";
           echo "<font style='cursor:pointer;' onclick=search($rid);>".($i+1) . "." . $title[0] . "</font>";
@@ -54,27 +61,24 @@
     }
     fclose($handle);
     $animal = json_decode($animal,true);
-    echo "中文俗稱 : " . $animal['SpCName'] . "<br>";
-    echo "英文學名 : " . $animal['SpEName'] . "<br>";
-    echo "地點 : " . $animal['Addr'] . "<br>";
-    echo "經度 : " . $animal['Lon'] . "<br>";
-    echo "緯度 : " . $animal['Lat'] . "<br>";
+    echo "<p>中文俗稱 : " . $animal['SpCName'] . "</p>";
+    echo "<p>英文學名 : " . $animal['SpEName'] . "</p>";
+    echo "<p>地點 : " . $animal['Addr'] . "</p>";
+    echo "<p>經度 : " . $animal['Lon'] . "</p>";
+    echo "<p>緯度 : " . $animal['Lat'] . "</p>";
     $image = $animal['SurveyImagePath'][0]['Path'];
-    echo "照片 : <br>";
-    echo "<img src=$image width='300px' height='300px'>" . "&nbsp;";
-    
+    echo "<p>照片 : </p>";
+    echo "<p><img src=$image width='300px' height='300px'></p>" . "&nbsp;";
+
   }
 ?>
 <script>
   function search(id)
   {
      $.get("pages/detail.php?id=" + id,function(data){
-        $("#mapContent").html("123");
-     	  $("#mainContent").html(data);
-        //$.get("pages/detail.php?id=" + id,function(data){$("#mapContent").html(data);})
-
+       $("#wiki").attr("src",document.getElementById("wikiurl").value);
+       $("#map").attr("src",document.getElementById("mapurl").value);
+     	 $("#mainContent").html(data);
      });
   }
-
-
 </script>
