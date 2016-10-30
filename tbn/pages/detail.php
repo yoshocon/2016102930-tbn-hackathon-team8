@@ -31,12 +31,12 @@
       $title = $animal['Title'];
       $title = explode(".",$title);
       $idurl = "'index.php?id=" . $rid."'";
-      echo "<div style='float:left;border-style:solid;border-width:thin;width:220px' onclick=test($rid);>";
+      echo "<div style='float:left;border-style:solid;border-width:thin;width:220px' >";
         echo "<div style='text-align:center'>";
-          echo $i+1 . "." . $title[0];
+          echo "<font style='cursor:pointer;' onclick=search($rid);>".($i+1) . "." . $title[0] . "</font>";
         echo "</div>";
         echo "<div style='margin-left:35px'>";
-          echo "<img src=$image width='150px' height='150px'>" . "&nbsp;";
+          echo "<img src=$image width='150px' onclick=search($rid); height='150px' style='cursor:pointer;'>" . "&nbsp;";
         echo "</div>";
       echo "</div>";
       $i++;
@@ -53,29 +53,28 @@
       $animal .= fread($handle,1000000);
     }
     fclose($handle);
-    echo "中文俗稱 : " . $animal['SpCName'];
-    echo "英文學名 : " . $animal['SpEName'];
-    echo "地點 : " . $animal['Addr'];
-    echo "經度 : " . $animal['Lon'];
-    echo "緯度 : " . $animal['Lat'];
-    $image = $animal['SurveyImagePath']['Path'];
-    echo "<div>";
-      echo "<div>";
-        echo "照片 : ";
-      echo "</div>";
-      echo "<div>";
-        echo "<img src=$image width='300px' height='300px'>" . "&nbsp;";
-      echo "</div>";
-    echo "</div>";
+    $animal = json_decode($animal,true);
+    echo "中文俗稱 : " . $animal['SpCName'] . "<br>";
+    echo "英文學名 : " . $animal['SpEName'] . "<br>";
+    echo "地點 : " . $animal['Addr'] . "<br>";
+    echo "經度 : " . $animal['Lon'] . "<br>";
+    echo "緯度 : " . $animal['Lat'] . "<br>";
+    $image = $animal['SurveyImagePath'][0]['Path'];
+    echo "照片 : <br>";
+    echo "<img src=$image width='300px' height='300px'>" . "&nbsp;";
+    
   }
 ?>
 <script>
-  function test(id)
+  function search(id)
   {
-    alert("2");
      $.get("pages/detail.php?id=" + id,function(data){
-     	//$("mainContent").html(data);
-      alert("5")
+        $("#mapContent").html("123");
+     	  $("#mainContent").html(data);
+        //$.get("pages/detail.php?id=" + id,function(data){$("#mapContent").html(data);})
+
      });
   }
+
+
 </script>
