@@ -14,7 +14,7 @@
 如果修改過程中我的庫有了更新，請重複7,8,9步。
 
 修改之後，首先推到你的庫，然後登錄GitHub，在你的庫的首頁可以看到一個拉請求按鈕，點擊它，填寫一些說明信息，然後提交即可。
-git add .
-git commit -m "說明訊息"
-git push origin devthree #推上去
-New Pull requests 
+1. git add .
+2. git commit -m "說明訊息"
+3. git push origin devthree #推上去
+4. New Pull requests 
