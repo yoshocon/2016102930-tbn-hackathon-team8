@@ -105,7 +105,7 @@
             <br/>
             <h2>專案說明</h2>
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由於現代不少3C產品，許多家庭的孩子童年不在是大自然相陪，過度沉溺在科技產品上</p>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;期望能夠透過TBN的資料讓這個網頁可以拉近家庭煎的親子距離以及認識大自然的美好</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;期望能夠透過TBN的資料讓這個網頁可以拉近家庭間的親子距離以及認識大自然的美好</p>
             <a class="github-button" href="https://github.com/yoshocon/2016102930-tbn-hackathon-team8" data-style="mega" data-count-href="/yoshocon/2016102930-tbn-hackathon-team8/stargazers" data-count-api="/repos/yoshocon/2016102930-tbn-hackathon-team8#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star yoshocon/2016102930-tbn-hackathon-team8 on GitHub">Star</a>
 
         </div>
