@@ -27,8 +27,12 @@
 				</td>
 				<td>
 					<select id="selectSpecies" class="form-control">
-						<option value="請選擇">請選擇</option>
-						<option value="1">1</option>
+						<?php
+							foreach ($content as $key => $value)
+							{
+								echo "<option value='$value->SpeciesName_CN'>$value->SpeciesName_CN($value->SpeciesName_Eng)</option>";
+							}
+						?>
 					</select>
 				</td>
 				<td>
@@ -49,12 +53,12 @@
 					<input type='button' id="reset" class='btn btn-info' value="重新輸入" />
 				</td>
 			</tr>
-			<tr>
-				<td colspan="9">
-					<div id="mainContent">
-					</div>
-				</td>
-			</tr>
+		<tr>
+		<td colspan="9">
+		<div id="mainContent">
+		</div>
+		</td>
+		</tr>
 		</table>
 		
 		
@@ -62,17 +66,17 @@
 		
 		
 		
-	</div>
-	<div id="tabs-2">
+		</div>
+		<div id="tabs-2">
 		
-	</div>
-	<div id="tabs-3">
+		</div>
+		<div id="tabs-3">
 		<p><a class='iframe' href="https://zh.wikipedia.org/wiki/台灣獼猴">Outside Webpage (Iframe)</a></p>
-	</div>
-</div>
-<input type="hidden" id="tmpPara" value="" />
-	<link rel="stylesheet" href="stylesheets/context/colorbox.css">
-	<script src="javascripts/context/jquery.colorbox.js"></script>
-	<link rel="stylesheet" href="stylesheets/page/main.css">
-	<script src="javascripts/page/main.js"></script>	<!-- js -->
-		
+		</div>
+		</div>
+		<input type="hidden" id="tmpPara" value="" />
+		<link rel="stylesheet" href="stylesheets/context/colorbox.css">
+		<script src="javascripts/context/jquery.colorbox.js"></script>
+		<link rel="stylesheet" href="stylesheets/page/main.css">
+		<script src="javascripts/page/main.js"></script>	<!-- js -->
+				
