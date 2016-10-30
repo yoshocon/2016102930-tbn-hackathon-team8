@@ -24,8 +24,15 @@
     $ez=urlencode("鳥類");
     //給使用者輸入想要看或認識的動物
     $near="http://api.tbn.org.tw/api/Near?ez=$ez&lat=$lat&lon=$lon&type=json";
-    $nearjson=file_get_contents($near);
-    $nearjson_data=json_decode($nearjson);
+    $handle = fopen($near,'rb');
+    $nearjson ='';
+    while(!feof($handle))
+    {
+        $nearjson .= fread($handle,100000);
+    }
+    fclose($handle);
+    $nearjson = json_decode($nearjson,false);
+    // $nearjson_data=json_decode($nearjson);
     //串入活動座標並抓取tbnapi
 
     echo $nearjson_data->rows[0]->ez_name;
@@ -37,4 +44,3 @@
     $pictrue="http://api.tbn.org.tw/api/picture?pid=$pid&q=100&size=600&type=json";
     //接入圖片api
     echo "<img src=$pictrue>";
-    
