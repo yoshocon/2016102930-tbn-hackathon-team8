@@ -1,43 +1,50 @@
 <?php
-  include("kind.php");
-  include("detail.php");
-  if (isset($_GET['id']))
-  {
-    $rid = $_GET['id'];
-  }
+	include("kind.php");
+	include("detail.php");
+	if (isset($_GET['id']))
+	{
+		$rid = $_GET['id'];
+	}
 ?>
 <div id="tabs">
 	<ul>
 		<li><a href="#tabs-1">查詢</a></li>
 		<li><a href="#tabs-2">地圖</a></li>
 		<li><a href="#tabs-3">維基百科</a></li>
-		<font>查詢-></font>
-		<li id="back"><a href="">回上一頁</a></li>
+		<li><a href="#tabs-4">近期新聞</a></li>
+		<li><a href="#tabs-5">親子活動</a></li>
+		<font id="currentCondition">查詢-></font>
+		
 	</ul>
+<<<<<<< HEAD
 	<div id="tabs-1">
 		<table  cellpadding="20" width="100%">
+=======
+	<div id="tabs-1" align="center">
+		<label disabled='disabled' id="back"><img src="img/return.png">&nbsp;回上一頁</label>
+		
+		<table cellpadding="20" width="100%">
+>>>>>>> New news
 			<tr>
-				<th>查詢地點</th>
-				<th>查詢種類</th>
-				<th>查詢名字(關鍵字ex:蝶)</th>
-				<th>數量最大限制</th>
-
+				<th>#</th>	
+				<th>查詢種類</th>	
+				<th>查詢名字(關鍵字ex:蝶)</th>	
+				<th>數量最大限制</th>	
+				
 			</tr>
 			<tr>
 				<td>
-          <!-- id="selectArea" !-->
-					<select  class="form-control">
-						<option value="請選擇">請選擇</option>
-					</select>
+					
 				</td>
 				<td>
 					<select id="selectSpecies" class="form-control">
-            <?php
+						<option value="請選擇">請選擇</option>
+						<?php
 							foreach ($content as $key => $value)
 							{
 								echo "<option value='$value->SpeciesName_CN'>$value->SpeciesName_CN($value->SpeciesName_Eng)</option>";
 							}
-  					?>
+						?>
 					</select>
 				</td>
 				<td>
@@ -48,7 +55,7 @@
 				</td>
 				<td>
 					<select id="selectNum" class="form-control">
-						<option value="請選擇">請選擇</option>
+						<option value="請選擇">請選擇</option>	
 					</select>
 				</td>
 				<td colspan="2" >
@@ -58,20 +65,21 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan="6">
+				<td colspan="9">
 					<div id="mainContent">
 					</div>
 				</td>
 			</tr>
 		</table>
-
-
-
-
-
-
+		
+		
+		
+		
+		
+		
 	</div>
 	<div id="tabs-2">
+<<<<<<< HEAD
       <div id="mapContent">
         <iframe id="map" width="655px" height="655px" frameborder="1" src=""></iframe>
       </div>
@@ -80,9 +88,20 @@
       <div id="wikiContent">
           <iframe id="wiki" width="100%" height="750px" frameborder="1" src=""></iframe>
       </div>
+=======
+		<div id="mapContent"> 
+		</div>
+	</div>
+	<div id="tabs-3">
+		<div id="wikiContent">
+			<p><a class='iframe' href="https://zh.wikipedia.org/wiki/台灣獼猴">Outside Webpage (Iframe)</a></p>
+		</div>
+>>>>>>> New news
 	</div>
 </div>
 
+<input type="hidden" id="tmpPara" value="" />
+<link rel="stylesheet" href="stylesheets/page/circle.css">
 <link rel="stylesheet" href="stylesheets/context/colorbox.css">
 <script src="javascripts/context/jquery.colorbox.js"></script>
 <link rel="stylesheet" href="stylesheets/page/main.css">
