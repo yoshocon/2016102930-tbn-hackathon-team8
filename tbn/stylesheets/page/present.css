@@ -1,0 +1,95 @@
+body{
+	vertical-align:middle;
+	font:80% "Microsoft JhengHei",sans-serif;
+	margin: 20px;
+	font-size:15px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c3dbb8+11,7def73+64,e4f2e3+100 */
+	background: #c3dbb8; /* Old browsers */
+	background: -moz-linear-gradient(left,  #c3dbb8 11%, #7def73 64%, #e4f2e3 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left,  #c3dbb8 11%,#7def73 64%,#e4f2e3 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right,  #c3dbb8 11%,#7def73 64%,#e4f2e3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c3dbb8', endColorstr='#e4f2e3',GradientType=1 ); /* IE6-9 */
+
+}
+
+
+hr{
+
+	border:1px solid black;height:1px;
+}
+#footer{
+	background-color:#20B2AA;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	height:300px;
+}
+#linkcolor:link{
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+#linkcolor:visited{
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+#linkcolor:hover {
+    color: pink;
+    background-color: transparent;
+    text-decoration: underline;
+}
+#linkcolor:active {
+    color: black;
+    background-color: transparent;
+    text-decoration: underline;
+}
+#homepage{
+	width:68%;
+
+}
+#ul{
+	width:68%;
+}
+
+#mainIcon{
+
+	position:absolute;right:100px;top:25px;
+	width:auto;width:220px;
+}
+.demoHeaders {
+	margin-top: 2em;
+}
+#dialog-link {
+	padding: .4em 1em .4em 20px;
+	text-decoration: none;
+	position: relative;
+}
+#dialog-link span.ui-icon {
+	margin: 0 5px 0 0;
+	position: absolute;
+	left: .2em;
+	top: 50%;
+	margin-top: -8px;
+}
+#icons {
+	margin: 0;
+	padding: 0;
+}
+#icons li {
+	margin: 2px;
+	position: relative;
+	padding: 4px 0;
+cursor: pointer;
+float: left;
+list-style: none;
+}
+#icons span.ui-icon {
+float: left;
+margin: 0 4px;
+}
+.fakewindowcontain .ui-widget-overlay {
+position: absolute;
+}
+select {
+width: 200px;
+}
